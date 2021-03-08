@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/canvas-paint-app/static/css/main.650836b8.chunk.css",
+    "main.js": "/canvas-paint-app/static/js/main.cd90e7bc.chunk.js",
+    "main.js.map": "/canvas-paint-app/static/js/main.cd90e7bc.chunk.js.map",
+    "runtime-main.js": "/canvas-paint-app/static/js/runtime-main.2e305bef.js",
+    "runtime-main.js.map": "/canvas-paint-app/static/js/runtime-main.2e305bef.js.map",
+    "static/js/2.ba231dd1.chunk.js": "/canvas-paint-app/static/js/2.ba231dd1.chunk.js",
+    "static/js/2.ba231dd1.chunk.js.map": "/canvas-paint-app/static/js/2.ba231dd1.chunk.js.map",
+    "index.html": "/canvas-paint-app/index.html",
+    "static/css/main.650836b8.chunk.css.map": "/canvas-paint-app/static/css/main.650836b8.chunk.css.map",
+    "static/js/2.ba231dd1.chunk.js.LICENSE.txt": "/canvas-paint-app/static/js/2.ba231dd1.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2e305bef.js",
+    "static/js/2.ba231dd1.chunk.js",
+    "static/css/main.650836b8.chunk.css",
+    "static/js/main.cd90e7bc.chunk.js"
+  ]
+}
