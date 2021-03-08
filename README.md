@@ -8,15 +8,13 @@
 
 ## Installation instructions
 
-`
-
+```
 git clone https://github.com/MelnikovAleksei/canvas-paint-app.git 
 
 cd canvas-paint-app 
 
 npm start 
-
-`
+```
 
 ## Future revisions of the project will include
 
