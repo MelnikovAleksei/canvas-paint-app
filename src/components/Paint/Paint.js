@@ -49,7 +49,6 @@ function Paint() {
 		if(!drawing) {
 			return;
 		};
-		console.log(evt)
 
 		const { clientX, clientY } = evt;
 		const index = elements.length - 1;
