@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/canvas-paint-app/static/css/main.a44b72d8.chunk.css",
-    "main.js": "/canvas-paint-app/static/js/main.040b8a5c.chunk.js",
-    "main.js.map": "/canvas-paint-app/static/js/main.040b8a5c.chunk.js.map",
+    "main.js": "/canvas-paint-app/static/js/main.e2aec71e.chunk.js",
+    "main.js.map": "/canvas-paint-app/static/js/main.e2aec71e.chunk.js.map",
     "runtime-main.js": "/canvas-paint-app/static/js/runtime-main.2e305bef.js",
     "runtime-main.js.map": "/canvas-paint-app/static/js/runtime-main.2e305bef.js.map",
     "static/js/2.cb5c73f7.chunk.js": "/canvas-paint-app/static/js/2.cb5c73f7.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.2e305bef.js",
     "static/js/2.cb5c73f7.chunk.js",
     "static/css/main.a44b72d8.chunk.css",
-    "static/js/main.040b8a5c.chunk.js"
+    "static/js/main.e2aec71e.chunk.js"
   ]
 }
