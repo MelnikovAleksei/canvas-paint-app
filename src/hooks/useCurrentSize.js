@@ -1,11 +1,11 @@
 import React from 'react';
 
 const getWidth = () => {
-  return window.innerWidth;
+  return document.documentElement.clientWidth;
 };
 
 const getHeight = () => {
-  return window.innerHeight;
+  return document.documentElement.clientHeight;
 };
 
 function useCurrentSize() {
