@@ -102,7 +102,7 @@ const resizedCoordinates = (clientX, clientY, position, coordinates) => {
 		case 'start':
 			return { x1: clientX, y1: clientY, x2, y2 };
 		case 'bottom-left':
-			return { x1: clientX, y2, x2, y2: clientY };
+			return { x1: clientX, x2, y2: clientY };
 		case 'top-right':
 			return { x1, x2: clientX, y1: clientY, y2 };
 		case 'bottom-right':
@@ -138,8 +138,15 @@ function Paint() {
 		setElements(elementsCopy);
 	};
 
-	const handleMouseDown = (evt) => {
-		const { clientX, clientY } = evt;
+	const handleDown = (evt) => {
+		let clientX, clientY;
+		if (evt.type === 'mousedown') {
+			clientX = evt.clientX;
+			clientY = evt.clientY;
+		} else {
+			clientX = evt.touches[0].clientX;
+			clientY = evt.touches[0].clientY;
+		};
 
 		if (tool === 'selection') {
 			const element = getElementAtPosition(clientX, clientY, elements);
@@ -166,9 +173,15 @@ function Paint() {
 		}
 	};
 
-	const handleMouseMove = (evt) => {
-		const { clientX, clientY } = evt;
-
+	const handleMove = (evt) => {
+		let clientX, clientY;
+		if (evt.type === 'mousemove') {
+			clientX = evt.clientX;
+			clientY = evt.clientY;
+		} else {
+			clientX = evt.touches[0].clientX;
+			clientY = evt.touches[0].clientY;
+		};
 		if (tool === 'selection') {
 			const element = getElementAtPosition(clientX, clientY, elements);
 			evt.target.style.cursor = element ? cursorForPosition(element.position) : "default";
@@ -203,7 +216,7 @@ function Paint() {
 		}
 	};
 
-	const handleMouseUp = () => {
+	const handleUp = () => {
 		if (action === 'drawing' || action === 'resizing') {
 			const index = selectedElement.id;
 			const { id, type } = elements[index];
@@ -268,23 +281,28 @@ function Paint() {
 		<div
 			className="paint"
 		>
-			<fieldset
-				className="paint__inputs-fieldset"
-			>
-				<legend
-					className="paint__inputs-legent"
+			<form>
+				<fieldset
+					className="paint__inputs-fieldset"
 				>
-					Shapes:
-				</legend>
-				{typesElementsInputsMarkup}
-			</fieldset>
+					<legend
+						className="paint__inputs-legent"
+					>
+						Shapes:
+					</legend>
+					{typesElementsInputsMarkup}
+				</fieldset>
+			</form>
 			<canvas 
 				id='canvas'
 				width={window.innerWidth}
 				height={window.innerHeight}
-				onMouseDown={handleMouseDown}
-				onMouseMove={handleMouseMove}
-				onMouseUp={handleMouseUp}
+				onMouseDown={handleDown}
+				onTouchStart={handleDown}
+				onTouchMove={handleMove}
+				onMouseMove={handleMove}
+				onMouseUp={handleUp}
+				onTouchEnd={handleUp}
 			/>
 		</div>
 		
