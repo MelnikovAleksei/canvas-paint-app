@@ -1,6 +1,8 @@
 import React from 'react';
 import rough from 'roughjs/bundled/rough.esm';
 
+import useCurrentSize from '../../hooks/useCurrentSize';
+
 const generator = rough.generator();
 
 function createElement(id, x1, y1, x2, y2, type) {
@@ -119,6 +121,7 @@ function Paint() {
 	const [action, setAction] = React.useState('none');
 	const [tool, setTool] = React.useState('line');
 	const [selectedElement, setSelectedElement] = React.useState(null);
+	const canvasSize = useCurrentSize();
 
 	React.useLayoutEffect(() => {
 		const canvas = document.querySelector('#canvas');
@@ -128,7 +131,7 @@ function Paint() {
 		const roughCanvas = rough.canvas(canvas);
 
 		elements.forEach(({ roughElement }) => roughCanvas.draw(roughElement));
-	}, [elements]);
+	}, [elements, canvasSize]);
 
 	const updateElement = (id, x1, y1, x2, y2, type) => {
 		const updatedElement = createElement(id, x1, y1, x2, y2, type);
@@ -295,8 +298,8 @@ function Paint() {
 			</form>
 			<canvas 
 				id='canvas'
-				width={window.innerWidth}
-				height={window.innerHeight}
+				width={canvasSize.width}
+				height={canvasSize.height}
 				onMouseDown={handleDown}
 				onTouchStart={handleDown}
 				onTouchMove={handleMove}
