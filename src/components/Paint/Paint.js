@@ -102,7 +102,7 @@ const resizedCoordinates = (clientX, clientY, position, coordinates) => {
 		case 'start':
 			return { x1: clientX, y1: clientY, x2, y2 };
 		case 'bottom-left':
-			return { x1: clientX, x2, y2: clientY };
+			return { x1: clientX, x2, y1, y2: clientY };
 		case 'top-right':
 			return { x1, x2: clientX, y1: clientY, y2 };
 		case 'bottom-right':
